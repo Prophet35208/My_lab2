@@ -7,6 +7,20 @@ typedef struct Deck { // Колода карт.
     Card* cards[10]; // Массив карт. 
     int capacity;
 };
+typedef struct Multiplyer {// Совокупность коэффициентов
+    int hard_multipl;
+    int soft_multipl;
+};
+typedef struct Hand {// Рука игрока. Макс размер -- 3.
+    Card* cards_value[3];
+
+};
+typedef struct Player { // Игрок
+    char name[20];
+    Hand hand;
+    int current_score;
+};
+// 
 // Конструкторы Deck
 Deck* Init_Deck() { // По умолчанию. Размер 10
     Deck* ptr;
