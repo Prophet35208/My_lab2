@@ -1,13 +1,13 @@
 ﻿
 #include <iostream>
+typedef struct Card {// Карта. Имеет стоимости от 1 до 10.
+    int cost;
+};
 typedef struct Deck { // Колода карт.
-    typedef struct Card {// Карта. Имеет стоимости от 1 до 10.
-        int cost;
-    };
     Card cards[10]; // Массив карт. 
     int capacity;
 };
-// Конструкторы
+// Конструкторы Deck
 Deck* Init_Deck() { // По умолчанию. Размер 10
     Deck* ptr;
     ptr = (Deck*)malloc(sizeof(Deck));
@@ -23,10 +23,27 @@ Deck* Init_Deck(int capacity) { // Размер по выбору
 }
 //
 
-// Деструктор
+// Деструктор Deck
 void destr_Deck(Deck* ptr) {
     delete(ptr);
 }
+
+// Конструктор Card
+Card* Init_Card(int cost) {
+    Card* ptr;
+    if (cost > 0 && cost < 11) {
+        ptr = (Card*)malloc(sizeof(Card));
+        ptr->cost = cost;
+    }
+    else
+        printf("\nОшибка. Неверное значение стоимости карты\n");
+}
+// Деструктор Card
+void destr_Card(Card* ptr) {
+    delete(ptr);
+}
+
+// Методы 
 int main()
 {
     std::cout << "Hello World!\n";
