@@ -34,9 +34,12 @@ Card* Init_Card(int cost) {
     if (cost > 0 && cost < 11) {
         ptr = (Card*)malloc(sizeof(Card));
         ptr->cost = cost;
+        return ptr;
     }
-    else
-        printf("\nОшибка. Неверное значение стоимости карты\n");
+    else {
+        printf("\nОшибка. Неверное значение стоимости карты. Указатель на объект равен нулю \n");
+        return 0;
+    }
 }
 // Деструктор Card
 void destr_Card(Card* ptr) {
