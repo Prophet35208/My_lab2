@@ -33,11 +33,6 @@ Card* Init_Card(int cost) {// NULL указатель при ошибке
         return NULL;
 
 }
-// Деструктор Card
-void destr_Card(Card* ptr) {
-    delete(ptr);
-}
-
 // Конструкторы Deck
 Deck* Init_Deck() { // По умолчанию. Размер 10
     Deck* ptr;
@@ -54,10 +49,6 @@ Deck* Init_Deck(int capacity) { // Размер по выбору
     ptr = (Deck*)malloc(sizeof(Deck));
     ptr->capacity = capacity;
     return ptr;
-}
-// Деструктор Deck
-void destr_Deck(Deck* ptr) {
-    delete(ptr);
 }
 // Методы Deck
 int Get_Num_Cards(Deck* deck_ptr) {// Получение кол-ва карт в колоде
@@ -79,10 +70,6 @@ Coefficient* Init_Coefficient(int soft_coefficient, int hard_coefficient) {
     ptr->hard_coefficient = hard_coefficient;
     return ptr;
 }
-// Деструктор Coefficient
-void destr_Coefficient(Coefficient* ptr) {
-    delete(ptr);
-}
 
 // Конструктор Player (и Hand)
 Player* Init_Player(string name) {
@@ -92,10 +79,6 @@ Player* Init_Player(string name) {
     ptr_1->name = name;
     ptr_2 = (Hand*)malloc(sizeof(Hand));
     return ptr_1;
-}
-// Деструктор Player
-void destr_Player(Player* ptr) {
-    delete(ptr);
 }
 int main()
 {
