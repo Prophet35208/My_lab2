@@ -1,7 +1,7 @@
 #pragma once
 class Coefficient
 {
-private:
+public:
 	int hard_coefficient;
 	int soft_coefficient;
 public:
