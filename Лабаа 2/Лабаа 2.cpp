@@ -11,7 +11,7 @@ typedef struct Deck { // Колода карт.
 typedef struct Coefficient {// Совокупность коэффициентов
     int hard_coefficient;
     int soft_coefficient;
-} current_multiplayer;
+};
 typedef struct Hand {// Рука игрока. Макс размер -- 3.
     Card* cards[3];
 
