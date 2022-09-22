@@ -5,9 +5,9 @@ class Player
 {
 private:
 	int  player_num;
-	Hand hand;
 public:
-	Player();
+	Hand hand;
+	Player(int player_num);
 	int Get_Sum_Points(Coefficient* coefficient);
 };
 

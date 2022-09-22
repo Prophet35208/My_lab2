@@ -22,7 +22,7 @@ void Hand::Set_Card_In_Place_Of_Hand(Card* card_ptr, int hand_place)
 
 int Hand::Check_If_Card_In_Place(int place)
 {
-	if (this->cards_flag[place] = 1)
+	if (this->cards_flag[place] == 1)
 		return 1;
 	else
 		return 0;
