@@ -42,7 +42,7 @@ int main()
     printf("Hard coefficient первого= %d, Soft coefficient первого= %d\n", coefficient_1.Get_Hard_Coefficient(), coefficient_1.Get_Soft_Coefficient());
     printf("Hard coefficient второго= %d, Soft coefficient второго= %d\n", coefficient_2.Get_Hard_Coefficient(), coefficient_2.Get_Soft_Coefficient());
     //Так же покажем работу с динамическим массивом объектов класса и с массивом динамических объектов класса
-    printf("Поработаем с массвами\n");
+    printf("Поработаем с массивами\n");
     // Массивом динамических объектов класса
     // Создадим три карты со стоимостью 3 и узнаем их суммарную стоимость. После этого удалим
     Card* mas_cards[50];
@@ -55,7 +55,7 @@ int main()
     {
         sum += mas_cards[i]->Get_Cost();
     }
-    printf("Суммарная стоимость трёх новосозданных карт: %d", sum);
+    printf("Суммарная стоимость трёх новосозданных карт: %d\n", sum);
     for (int i = 0; i < 3; i++)
     {
         delete(mas_cards[i]);
@@ -70,5 +70,5 @@ int main()
     // Воспользуемся созданным коэффициентом для того, чтобы подсчитать кол-во баллов на руке нашего игрока
     int points;
     points = my_player.Get_Sum_Points(&my_coefficient);
-    getchar();
+    system("pause");
 }
