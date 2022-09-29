@@ -39,6 +39,7 @@ int Get_Num_Cards(Deck* deck_ptr) {// Получение кол-ва карт в колоде
 }
 void Set_Card_In_Place(Deck* deck_ptr, Card* card_ptr, int place) {// Установить карту в определённое место
     deck_ptr->cards[place - 1] = card_ptr;
+    deck_ptr->card_flag[place-1] = 1;
 }
 Card* Get_Card_From_Place(Deck* deck_ptr, int place) {
     deck_ptr->card_flag[place - 1] = 0;

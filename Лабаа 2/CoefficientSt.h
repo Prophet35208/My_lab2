@@ -13,7 +13,13 @@ Coefficient* Init_Coefficient(int soft_coefficient, int hard_coefficient) {
     return ptr;
 }
 // Ìועמהû Coefficient
-void Set_Coefficient(Coefficient* Coefficient_ptr, int hard_coefficient, int soft_coefficient) {
+void Set_Coefficient(Coefficient* Coefficient_ptr, int soft_coefficient, int hard_coefficient) {
     Coefficient_ptr->soft_coefficient = soft_coefficient;
     Coefficient_ptr->hard_coefficient = hard_coefficient;
+}
+int Get_Hard_Coefficient(Coefficient* coefficient_ptr) {
+    return coefficient_ptr->hard_coefficient;
+}
+int Get_Soft_Coefficient(Coefficient* coefficient_ptr) {
+    return coefficient_ptr->soft_coefficient;
 }

@@ -13,3 +13,6 @@ Card* Init_Card(int cost) {// NULL указатель при ошибке
         return NULL;
 
 }
+void Set_Card_Cost(Card* card_ptr, int cost) {
+    card_ptr->cost = cost;
+}
