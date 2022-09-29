@@ -154,6 +154,7 @@
     <ClInclude Include="CoefficientSt.h" />
     <ClInclude Include="DeckSt.h" />
     <ClInclude Include="HandSt.h" />
+    <ClInclude Include="PlayerSt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

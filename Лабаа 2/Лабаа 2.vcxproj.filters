@@ -32,5 +32,8 @@
     <ClInclude Include="HandSt.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerSt.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
