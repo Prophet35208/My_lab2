@@ -149,6 +149,12 @@
   <ItemGroup>
     <ClCompile Include="Лабаа 2.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CardSt.h" />
+    <ClInclude Include="CoefficientSt.h" />
+    <ClInclude Include="DeckSt.h" />
+    <ClInclude Include="HandSt.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
