@@ -1,8 +1,11 @@
 #include "Player.h"
 
+int Player::num_all_players=0;
+
 Player::Player(int player_num)
 {
     this->player_num = player_num;
+    num_all_players++;
 }
 
 int Player::Get_Sum_Points(Coefficient* coefficient)
@@ -15,4 +18,29 @@ int Player::Get_Sum_Points(Coefficient* coefficient)
     }
     sum_points_final = (sum_points_first * coefficient->hard_coefficient) + coefficient->soft_coefficient;
     return sum_points_final;
+}
+
+
+int Player::Get_Num_All_Players()
+{
+    return num_all_players;
+}
+
+int* Player::Return_Copy_Num_Player_Adress()
+{
+     int *num=new int(1);
+     *(num) = this->player_num;
+    return num;
+}
+
+int& Player::Return_Num_PLayer_Ssulka_Ssulka()
+{
+    int* num = new int(1);
+    *(num) = this->player_num;
+    return *num;
+}
+
+Player::~Player()
+{
+    num_all_players--;
 }
