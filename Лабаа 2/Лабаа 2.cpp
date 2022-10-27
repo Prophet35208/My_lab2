@@ -8,9 +8,15 @@
 using namespace std;
 int main()
 {
+    // Оператор this был использован в описании ф-ий всех классов
     setlocale(LC_ALL, "rus");
-    Player a(1), b(2); //Создали два игрока
-    cout << Player::Get_Num_All_Players(); // Получим инормацию о том, что у нас два игрока
+    Player player1(1), player2(2); //Создали два игрока
+    cout << Player::Get_Num_All_Players()<< endl; // Получим инормацию о том, что у нас два игрока
+    int *adr,ssulka;
+    adr = player1.Return_Copy_Num_Player_Adress(); //  Возврат значения через указатель
+    ssulka = player2.Return_Num_PLayer_Ssulka_Ssulka(); // Возврат значения через ссылку
+    // Дружескую фукнцию реализуем через перегрузку оператора вывода в поток. При выводе объекта класса Player выведем его отформатированный номер
+    cout << player2 << endl;
 
     system("pause");
 }

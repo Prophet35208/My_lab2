@@ -44,3 +44,10 @@ Player::~Player()
 {
     num_all_players--;
 }
+
+ostream& operator<<(ostream& os, const Player& player)
+{
+    os << "<!> " << player.player_num << " <!>";
+    return os;
+    // TODO: вставьте здесь оператор return
+}
