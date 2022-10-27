@@ -26,7 +26,16 @@ int main()
     cout << coef;
     coef=++coef;
     cout << coef;
-
+    cout << endl;
+    // Продемонстрируем работы с классом string
+    string str1,str2("Даниил");
+    cout << "Твоё имя: ";
+    cin >> str1;
+    cout <<" А моё: "<< str2<< endl;
+    if (str1.compare(str2))
+        cout << "Похоже разные у нас имена";
+    else
+        cout << "Да мы похоже с вами тёски"<< endl;
     system("pause");
 }
 /* Код для прошлой демонстрации
