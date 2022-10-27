@@ -1,6 +1,9 @@
 #pragma once
+#include <iostream>
+using namespace std;
 class Coefficient
 {
+	friend ostream& operator<<(ostream& os, const Coefficient& dt);
 public:
 	int hard_coefficient;
 	int soft_coefficient;
@@ -17,7 +20,7 @@ public:
 	// ƒобавим возможность увеличивать на некоторое число soft_coefficient (оператор +)
 	Coefficient operator+ (int num);
 	// ƒобавим возможность увеличивать на единицу hard_coefficient при этом возвращать значение после или до увеличени€ (постфиксный и префиксный ++)
-	Coefficient& operator++();
+	Coefficient operator++();
 	Coefficient operator++(int);
 };
 

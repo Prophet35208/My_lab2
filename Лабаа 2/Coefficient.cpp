@@ -61,8 +61,11 @@ Coefficient Coefficient::operator++(int)
 {
 	Coefficient coef=*this;
 	++*this;
-	return *this;
+	return coef;
 }
 
-
-
+ostream& operator<<(ostream& os, const Coefficient& coef)
+{
+	os << "Hard coefficient= " << coef.hard_coefficient << ", Soft coefficient = "<< coef.soft_coefficient<< endl;
+	return os;
+}

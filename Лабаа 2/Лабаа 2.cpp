@@ -17,6 +17,15 @@ int main()
     ssulka = player2.Return_Num_PLayer_Ssulka_Ssulka(); // Возврат значения через ссылку
     // Дружескую фукнцию реализуем через перегрузку оператора вывода в поток. При выводе объекта класса Player выведем его отформатированный номер
     cout << player2 << endl;
+    // Создадим коеффициент (по умолчанию hard=1,soft=0)
+    Coefficient coef;
+    cout << coef;
+    coef=coef + 5;
+    cout << coef;
+    coef=coef++;
+    cout << coef;
+    coef=++coef;
+    cout << coef;
 
     system("pause");
 }
