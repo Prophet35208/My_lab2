@@ -8,35 +8,52 @@
 using namespace std;
 int main()
 {
-    // Оператор this был использован в описании ф-ий всех классов
-    setlocale(LC_ALL, "rus");
-    Player player1(1), player2(2); //Создали два игрока
-    cout << Player::Get_Num_All_Players()<< endl; // Получим инормацию о том, что у нас два игрока
-    int *adr,ssulka;
-    adr = player1.Return_Copy_Num_Player_Adress(); //  Возврат значения через указатель
-    ssulka = player2.Return_Num_PLayer_Ssulka_Ssulka(); // Возврат значения через ссылку
-    // Дружескую фукнцию реализуем через перегрузку оператора вывода в поток. При выводе объекта класса Player выведем его отформатированный номер
-    cout << player2 << endl;
-    // Создадим коеффициент (по умолчанию hard=1,soft=0)
-    Coefficient coef;
-    cout << coef;
-    coef=coef + 5;
-    cout << coef;
-    coef=coef++;
-    cout << coef;
-    coef=++coef;
-    cout << coef;
-    cout << endl;
-    // Продемонстрируем работы с классом string
-    string str1,str2("Даниил");
-    cout << "Твоё имя: ";
-    cin >> str1;
-    cout <<" А моё: "<< str2<< endl;
-    if (str1.compare(str2))
-        cout << "Похоже разные у нас имена";
-    else
-        cout << "Да мы похоже с вами тёски"<< endl;
-    system("pause");
+    // Контроль над конструкторами при создании объектов класса
+    setlocale(LC_ALL, "Rus");
+    Card card_1(3);
+    printf("Стоимость карты: %d", card_1.Get_Cost());
+    printf("\n");
+    printf("\n");
+    Card card_2(0);
+    printf("Стоимость карты: %d", card_2.Get_Cost());
+    printf("\n");
+    printf("\n");
+    Card card_3(20);
+    printf("Стоимость карты: %d", card_3.Get_Cost());
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    // Контроль на set-тером стоимости объекта 
+    card_1.Set_Cost(5);
+    printf("Стоимость карты: %d", card_1.Get_Cost());
+    printf("\n");
+    printf("\n");
+    card_2.Set_Cost(-4);
+    printf("Стоимость карты: %d", card_2.Get_Cost());
+    printf("\n");
+    printf("\n");
+    card_3.Set_Cost(100);
+    printf("Стоимость карты: %d", card_3.Get_Cost());
+    printf("\n");
+
+    // Создание массивов, заполнение первого, второй и третий оставлен заполненный конструктором по умолчанию
+    Card cards_1[5][4];
+    for (int  i=0;i<5;i++)
+        for (int j = 0; j < 4; j++)
+        {
+            cards_1[i][j].Set_Cost(j+1);
+        }
+    // Заполнение массива карт 3 ценой карт первого массива + единица к цене каждой карты. Копируется вторая строка первого массива
+    Card cards_2[4],cards_3[4];
+    for (int i = 0; i < 4; i++)
+        cards_3[i].Set_Cost(cards_1[2][i].Get_Cost() + cards_3[i].Get_Cost());
+    // Вывод
+    printf("\n");
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%d\n", cards_3[i].Get_Cost());
+    }
+
 }
 /* Код для прошлой демонстрации
 // Создадим колоду вместимостью 5 карт
