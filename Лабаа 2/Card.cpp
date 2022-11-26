@@ -2,7 +2,7 @@
 
 Card::Card(int cost)
 {
-	this->cost=cost;
+	this->cost= cost;
 }
 
 Card::Card()
@@ -18,4 +18,10 @@ int Card::Get_Cost()
 void Card::Set_Cost(int cost)
 {
 	this->cost = cost;
+}
+
+ostream& operator<<(ostream& os, const Card& card)
+{
+	os << "Стоимость карты= " << card.cost << endl;
+	return os;
 }

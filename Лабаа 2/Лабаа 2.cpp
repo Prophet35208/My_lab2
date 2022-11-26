@@ -5,37 +5,26 @@
 #include "Deck.h"
 #include "Hand.h"
 #include "Player.h"
+#include "Card_Deck_Ordered.h"
 using namespace std;
 int main()
 {
-    // Оператор this был использован в описании ф-ий всех классов
-    setlocale(LC_ALL, "rus");
-    Player player1(1), player2(2); //Создали два игрока
-    cout << Player::Get_Num_All_Players()<< endl; // Получим инормацию о том, что у нас два игрока
-    int *adr,ssulka;
-    adr = player1.Return_Copy_Num_Player_Adress(); //  Возврат значения через указатель
-    ssulka = player2.Return_Num_PLayer_Ssulka_Ssulka(); // Возврат значения через ссылку
-    // Дружескую фукнцию реализуем через перегрузку оператора вывода в поток. При выводе объекта класса Player выведем его отформатированный номер
-    cout << player2 << endl;
-    // Создадим коеффициент (по умолчанию hard=1,soft=0)
-    Coefficient coef;
-    cout << coef;
-    coef=coef + 5;
-    cout << coef;
-    coef=coef++;
-    cout << coef;
-    coef=++coef;
-    cout << coef;
-    cout << endl;
-    // Продемонстрируем работы с классом string
-    string str1,str2("Даниил");
-    cout << "Твоё имя: ";
-    cin >> str1;
-    cout <<" А моё: "<< str2<< endl;
-    if (str1.compare(str2))
-        cout << "Похоже разные у нас имена";
-    else
-        cout << "Да мы похоже с вами тёски"<< endl;
+    setlocale(LC_ALL, "Rus");
+    Card card1(1), card2(2), card3(3);
+    Card_Deck_Ordered deck1;
+    cout << "Кол-во карт сейчас= " <<deck1.Get_Num_All_Cards() << endl;
+    deck1.Set_Card_On_Top(card1);
+    cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
+    deck1.Set_Card_On_Top(card2);
+    cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
+    deck1.Get_Card_From_Top();
+    cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
+    deck1.Set_Card_On_Top(card3);
+    cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
+    cout << deck1.Get_Card_From_Top();
+
+
+
     system("pause");
 }
 /* Код для прошлой демонстрации

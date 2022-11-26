@@ -149,6 +149,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Card.cpp" />
+    <ClCompile Include="Card_Deck_Ordered.cpp" />
+    <ClCompile Include="Card_Unit.cpp" />
     <ClCompile Include="Coefficient.cpp" />
     <ClCompile Include="Deck.cpp" />
     <ClCompile Include="Hand.cpp" />
@@ -157,6 +159,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.h" />
+    <ClInclude Include="Card_Deck_Ordered.h" />
+    <ClInclude Include="Card_Unit.h" />
     <ClInclude Include="Coefficient.h" />
     <ClInclude Include="Deck.h" />
     <ClInclude Include="Hand.h" />
