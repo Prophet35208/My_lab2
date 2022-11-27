@@ -8,7 +8,7 @@ protected:
 public:
 	Card(int cost);
 	Card();
-	int Get_Cost();
+	virtual int Get_Cost(); // ¬ базовом классе возвращает стоимомсть
 	void Set_Cost(int cost);
 	friend ostream& operator<<(ostream& os, const Card& dt);
 };

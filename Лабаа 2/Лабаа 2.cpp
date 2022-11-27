@@ -1,4 +1,5 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
+#include <algorithm>
 #include <iostream>
 #include "Card.h"
 #include "Coefficient.h"
@@ -6,25 +7,62 @@
 #include "Hand.h"
 #include "Player.h"
 #include "Card_Deck_Ordered.h"
+#include "Card_Unit.h"
 using namespace std;
+bool cond_to_lowest(Card* r1, Card* r2) {
+    if (r1->Get_Cost() <= (r2->Get_Cost()))
+        return false;
+    else
+        return true;
+
+}
+bool cond_find(Card* card)
+{
+    return (card->Get_Cost()==14);            // предикат - условие поиска
+}
+
 int main()
 {
+    int a;
     setlocale(LC_ALL, "Rus");
-    Card card1(1), card2(2), card3(3);
+    Card card_1(1), card_2(2), card_3(3);
     Card_Deck_Ordered deck1;
     cout << "Кол-во карт сейчас= " <<deck1.Get_Num_All_Cards() << endl;
-    deck1.Set_Card_On_Top(card1);
+    deck1.Set_Card_On_Top(card_1);
     cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
-    deck1.Set_Card_On_Top(card2);
+    deck1.Set_Card_On_Top(card_2);
     cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
     deck1.Get_Card_From_Top();
     cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
-    deck1.Set_Card_On_Top(card3);
+    deck1.Set_Card_On_Top(card_3);
     cout << "Кол-во карт сейчас= " << deck1.Get_Num_All_Cards() << endl;
     cout << deck1.Get_Card_From_Top();
+    
+    vector<Card*> v_cards;
+    Card* card1, * card2, * card3;
+    Card_Unit* card4, * card5, * card6;
+    card1 = new Card(3);
+    card2 = new Card(5);
+    card3 = new Card(2);
+    
+    card4 = new Card_Unit(4, 14);
+    card5 = new Card_Unit(5, 77);
+    card6 = new Card_Unit(6, 1);
+    
+    v_cards.push_back(card1);
+    v_cards.push_back(card2);
+    v_cards.push_back(card3);
+    v_cards.push_back(card4);
+    v_cards.push_back(card5);
+    v_cards.push_back(card6);
 
-
-
+    // Сортировка по цене
+    sort(v_cards.begin(), v_cards.end(),cond_to_lowest);
+    // Нахождение конкретной цены
+    vector<Card*>::iterator ia;
+    ia = find_if(v_cards.begin(), v_cards.end(), cond_find);
+    if (ia != v_cards.end())     // если найден
+         a = (*ia)->Get_Cost();
     system("pause");
 }
 /* Код для прошлой демонстрации
